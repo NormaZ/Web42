@@ -1,0 +1,25 @@
+- content_for :head do
+  = stylesheet_link_tag 'Devise/password_reset'
+
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal'}) do |f|
+  - if devise_error_messages!
+    - messages = (devise_error_messages!).split(/<li>|<\/li>/)
+    - messages = messages[1, messages.length - 2]
+    - if messages
+      - messages.each do |message|
+        - if !message.empty?
+          .alert.alert-danger.alert-dismissible.fade.in{:role => "alert"}
+            %button.close{"data-dismiss" => "alert", :type => "button"}
+              %span{"aria-hidden" => "true"} &times;
+              %span.sr-only Close
+            = message
+  .form-group
+    = f.label :login, class: "col-sm-3 col-md-4 control-label"
+    .col-sm-6.col-md-4
+      = f.text_field :login, autofocus: true , class: "form-control", required: true
+  .form-group
+    .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+      = f.submit t("send_password_reset_instructions"), class: 'btn-block btn btn-success'
+  .form-group
+    .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+      = render "devise/shared/links"

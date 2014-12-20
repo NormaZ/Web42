@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+begin
+  load File.expand_path("../spring", __FILE__)
+rescue LoadError
+end
+APP_PATH = File.expand_path('../../config/application',  __FILE__)
+require_relative '../config/boot'
+require "rails/commands/server"
+require 'thin'
+module Thin
+  module Backends
+    TcpServer.class_eval do
+      def initialize_with_SSL(host, port)
+        if Rails.env.development?
+          Rails.logger.info "Loading SSL certs from ./ssl_dev..."
+          @ssl = true
+        end
+
+        initialize_without_SSL(host, port)
+      end
+
+      alias_method :initialize_without_SSL, :initialize
+      alias_method :initialize, :initialize_with_SSL      
+    end
+  end
+end
+require 'rails/commands'

@@ -1,0 +1,160 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/** User edit
+******************************/
+
+body.controller-registrations {
+
+	.form-inputs {
+		margin: 30px 0;
+
+		.tabs {
+			margin-bottom: 30px;
+		}
+	}
+
+	.submit {
+		margin-bottom: 30px;
+	}
+}
+
+
+// What's the rest for? user registration? looks deprecated ain'it though?
+	
+	.login-form{
+		border: 1px solid #F0F0F0;
+		font-size: 15px;
+		background: url('inch_logo.png'),linear-gradient(to bottom, #F0F0F0 0%, #F0F0F0 220px,rgba(0,0,0,0) 220px,rgba(0,0,0,0) 100%);
+		background-size: 57px, auto;
+		background-repeat: no-repeat;
+		background-position: center 190px, center top;
+		margin-bottom: 60px;
+		padding-bottom: 25px;
+		padding-top: 25px;
+		margin-top: -40px;
+	}
+
+	.login-form form{
+		margin-top: 120px;
+	}
+	
+	.login-form h2{
+		margin: 0 0;
+	}
+	
+	.agency{
+		font-weight: bold;
+	}
+	
+	.step-1-login, .step-2-login{
+		transition: all .7s ease-out;
+		-webkit-transition: all .7s ease-out;
+	}
+	
+	.form-hide{
+		opacity: 0;
+	}
+	
+	.step-1-login.form-hide{
+		transform: translate(-300px, 0px);
+	}
+	
+	.step-2-login.form-hide{
+		transform: translate(0px, 0px);
+	}
+	
+	.steps-login{
+		width: 100%;
+		max-width: 300px;
+		margin: auto;
+		position: relative;
+		height: 240px;
+	}
+	
+	.step-1-login, .step-2-login{
+		position: absolute;
+		width: 100%;
+	}
+	
+	.step-2-login{
+		left: 100%;
+		transform: translate(-300px, 0px);
+	}
+	
+	.form_error{
+		font-size:11px;
+		color:#DB0808;
+		position: absolute;
+		margin-top: -18px;
+	}
+	
+	.login-form .list-group{
+		position: absolute;
+		width: 50%;
+		margin-left: 10px;
+		margin-top: -1px;
+		max-height: 120px;
+		overflow-y: scroll;
+		border: 1px solid #ccc;
+		border-bottom-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-top: none;
+	}
+	
+	.login-form .list-group-item{
+		font-size: 11px;
+		padding: 2px 10px;
+		border: none;
+		cursor: pointer;
+		transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+	}
+	
+	.login-form .list-group-item:hover{
+		background: #ededed;
+	}
+	
+	@-webkit-keyframes shake {
+		0%, 100% {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		
+		10%, 30%, 50%, 70%, 90% {
+			-webkit-transform: translate3d(-5px, 0, 0);
+			transform: translate3d(-5px, 0, 0);
+		}
+		
+		20%, 40%, 60%, 80% {
+			-webkit-transform: translate3d(5px, 0, 0);
+			transform: translate3d(5px, 0, 0);
+		}
+	}
+	
+	@keyframes shake {
+		0%, 100% {
+			-webkit-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		
+		10%, 30%, 50%, 70%, 90% {
+			-webkit-transform: translate3d(-5px, 0, 0);
+			-ms-transform: translate3d(-5px, 0, 0);
+			transform: translate3d(-5px, 0, 0);
+		}
+		
+		20%, 40%, 60%, 80% {
+			-webkit-transform: translate3d(5px, 0, 0);
+			-ms-transform: translate3d(5px, 0, 0);
+			transform: translate3d(5px, 0, 0);
+		}
+	}
+	
+	.shake {
+		-webkit-animation: shake .5s;
+		animation: shake .5s;
+	}
+

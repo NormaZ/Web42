@@ -1,0 +1,20 @@
+.navbar.navbar-default.navbar-static-top{:role => "navigation"}
+  .container
+    .navbar-header
+      = link_to image_tag("logo42.gif"), root_path, class:"navbar-brand"
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        - if user_signed_in?
+          /
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            .btn.btn-block.btn-success.col-xs-6.col-sm-3.col-md-2
+              = link_to(I18n.t('edit_account'), edit_user_path(id: current_user.id))
+          %li
+            .btn.btn-block.btn-danger
+              = link_to I18n.t('.active_admin')[:devise][:links][:sign_out], destroy_user_session_path, :method => :delete
+        - else
+          %li
+            .btn.btn-block.btn-success.col-xs-6.col-sm-3.col-md-2
+              = link_to I18n.t('.active_admin')[:devise][:links][:sign_in], new_user_session_path
