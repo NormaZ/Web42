@@ -1,4 +1,5 @@
+Using Ruby v2.1.5 and Rails v4.1.8
+
 Run server using the following command:
 
-  `thin start --ssl`:w
-  
+  `thin start --ssl`
